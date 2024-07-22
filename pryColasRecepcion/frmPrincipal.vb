@@ -191,11 +191,11 @@ Public Class frmPrincipal
         e.Graphics.DrawString("Tenga lista su credencial y DNI", RptFont, Brushes.Black, New Point(CurrentX, 140))
         CurrentX = (ps.Width - e.Graphics.MeasureString("en mano. Recuerde que puede tomar turnos", RptFont).Width) / 2
         e.Graphics.DrawString("en mano.", RptFont, Brushes.Black, New Point(CurrentX, 155))
-        'e.Graphics.DrawString("en mano. Recuerde que puede tomar turnos", RptFont, Brushes.Black, New Point(CurrentX, 155))
-        'CurrentX = (ps.Width - e.Graphics.MeasureString("e imprimir sus estudios de laboratorio", RptFont).Width) / 2
-        'e.Graphics.DrawString("e imprimir sus estudios de laboratorio", RptFont, Brushes.Black, New Point(CurrentX, 170))
-        'CurrentX = (ps.Width - e.Graphics.MeasureString("en dim.com.ar", RptFont).Width) / 2
-        'e.Graphics.DrawString("en dim.com.ar", RptFont, Brushes.Black, New Point(CurrentX, 185))
+        e.Graphics.DrawString("en mano. Recuerde que puede tomar turnos", RptFont, Brushes.Black, New Point(CurrentX, 155))
+        CurrentX = (ps.Width - e.Graphics.MeasureString("e imprimir sus estudios de laboratorio", RptFont).Width) / 2
+        e.Graphics.DrawString("e imprimir sus estudios de laboratorio", RptFont, Brushes.Black, New Point(CurrentX, 170))
+        CurrentX = (ps.Width - e.Graphics.MeasureString("en dim.com.ar", RptFont).Width) / 2
+        e.Graphics.DrawString("en dim.com.ar", RptFont, Brushes.Black, New Point(CurrentX, 185))
 
         'Cuadros y marcos del ticket
         e.Graphics.DrawRectangle(Pens.Black, New Rectangle(New Point(25, 88), New Size(New Point(ps.Width - 50, 45))))
