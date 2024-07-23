@@ -1,6 +1,7 @@
 ﻿Imports Turnos.Entities
 Imports Turnos.Business
 Imports System.Drawing.Printing
+Imports System.IO
 
 Public Class frmPrincipal
     Private mCadenaNumero As String
@@ -171,31 +172,51 @@ Public Class frmPrincipal
         Dim ps As New PaperSize("Custom", psPrinter.Width, 230)
         e.PageSettings.PaperSize = ps
 
-        Dim RptFontBuenDia As Font = New Drawing.Font("Gill Sans MT", 14)
-        Dim RptFont As Font = New Drawing.Font("Gill Sans MT", 12)
+        Dim RptFontBuenDia As Font = New Drawing.Font("Gill Sans MT", 10, FontStyle.Bold)
+        Dim RptFont As Font = New Drawing.Font("Gill Sans MT", 9)
         Dim RptFontNumero As Font = New Drawing.Font("Gill Sans MT", 22)
 
-        CurrentX = (ps.Width - e.Graphics.MeasureString(CadenaDia, RptFontBuenDia).Width) / 2
-        e.Graphics.DrawString(CadenaDia, RptFontBuenDia, Brushes.Black, New Point(CurrentX, 0))
-        CurrentX = (ps.Width - e.Graphics.MeasureString("POR FAVOR AGUARDE", RptFont).Width) / 2
-        e.Graphics.DrawString("POR FAVOR AGUARDE", RptFont, Brushes.Black, New Point(CurrentX, 30))
-        CurrentX = (ps.Width - e.Graphics.MeasureString("A SER LLAMADO", RptFont).Width) / 2
-        e.Graphics.DrawString("A SER LLAMADO", RptFont, Brushes.Black, New Point(CurrentX, 50))
+
+        CurrentX = (ps.Width - e.Graphics.MeasureString("¡HOLA! TOMÁ ASIENTO Y", RptFontBuenDia).Width) / 2
+        e.Graphics.DrawString("¡HOLA! TOMÁ ASIENTO Y", RptFontBuenDia, Brushes.Black, New Point(CurrentX, 0))
+
+        CurrentX = (ps.Width - e.Graphics.MeasureString("AGUARDÁ A SER LLAMADO", RptFontBuenDia).Width) / 2
+        e.Graphics.DrawString("AGUARDÁ A SER LLAMADO", RptFontBuenDia, Brushes.Black, New Point(CurrentX, 15))
+
+        CurrentX = (ps.Width - e.Graphics.MeasureString("PODÉS DESCARGAR TUS ESTUDIOS", RptFont).Width) / 2
+        e.Graphics.DrawString("PODÉS DESCARGAR TUS ESTUDIOS", RptFont, Brushes.Black, New Point(CurrentX, 35))
+
+        CurrentX = (ps.Width - e.Graphics.MeasureString("DESDE LA APP YA QUE", RptFont).Width) / 2
+        e.Graphics.DrawString("DESDE LA APP YA QUE", RptFont, Brushes.Black, New Point(CurrentX, 45))
+
+        CurrentX = (ps.Width - e.Graphics.MeasureString("PERSONALMENTE PODRÍAMOS TENER", RptFont).Width) / 2
+        e.Graphics.DrawString("PERSONALMENTE PODRÍAMOS TENER", RptFont, Brushes.Black, New Point(CurrentX, 55))
+
+        CurrentX = (ps.Width - e.Graphics.MeasureString("1 HORA DE DEMORA", RptFont).Width) / 2
+        e.Graphics.DrawString("1 HORA DE DEMORA", RptFont, Brushes.Black, New Point(CurrentX, 65))
+
+        'RECUADRO CON EL NÚMERO
         CurrentX = (ps.Width - e.Graphics.MeasureString(mCadenaNumero, RptFontNumero).Width) / 2
-        e.Graphics.DrawString(mCadenaNumero, RptFontNumero, Brushes.Black, New Point(CurrentX, 90))
+        e.Graphics.DrawString(mCadenaNumero, RptFontNumero, Brushes.Black, New Point(CurrentX, 85))
+
         'CurrentX = (ps.Width - e.Graphics.MeasureString("Solicite turnos 100% online", RptFont).Width) / 2
         'e.Graphics.DrawString("Solicite turnos 100% online", RptFont, Brushes.Black, New Point(CurrentX, 140))
         'CurrentX = (ps.Width - e.Graphics.MeasureString("en dim.com.ar", RptFont).Width) / 2
         'e.Graphics.DrawString("en dim.com.ar", RptFont, Brushes.Black, New Point(CurrentX, 155))
-        CurrentX = (ps.Width - e.Graphics.MeasureString("Tenga lista su credencial y DNI", RptFont).Width) / 2
-        e.Graphics.DrawString("Tenga lista su credencial y DNI", RptFont, Brushes.Black, New Point(CurrentX, 140))
-        CurrentX = (ps.Width - e.Graphics.MeasureString("en mano. Recuerde que puede tomar turnos", RptFont).Width) / 2
-        e.Graphics.DrawString("en mano.", RptFont, Brushes.Black, New Point(CurrentX, 155))
-        e.Graphics.DrawString("en mano. Recuerde que puede tomar turnos", RptFont, Brushes.Black, New Point(CurrentX, 155))
-        CurrentX = (ps.Width - e.Graphics.MeasureString("e imprimir sus estudios de laboratorio", RptFont).Width) / 2
-        e.Graphics.DrawString("e imprimir sus estudios de laboratorio", RptFont, Brushes.Black, New Point(CurrentX, 170))
-        CurrentX = (ps.Width - e.Graphics.MeasureString("en dim.com.ar", RptFont).Width) / 2
-        e.Graphics.DrawString("en dim.com.ar", RptFont, Brushes.Black, New Point(CurrentX, 185))
+        CurrentX = (ps.Width - e.Graphics.MeasureString("POR FAVOR PREPARÁ TU CREDENCIAL Y DNI", RptFont).Width) / 2
+        e.Graphics.DrawString("POR FAVOR PREPARÁ TU CREDENCIAL Y DNI", RptFont, Brushes.Black, New Point(CurrentX, 140))
+
+        CurrentX = (ps.Width - e.Graphics.MeasureString("PARA AGILIZAR EL PROCESO", RptFont).Width) / 2
+        e.Graphics.DrawString("PARA AGILIZAR EL PROCESO", RptFont, Brushes.Black, New Point(CurrentX, 150))
+
+        CurrentX = (ps.Width - e.Graphics.MeasureString("EN LA RECEPCIÓN", RptFont).Width) / 2
+        e.Graphics.DrawString("EN LA RECEPCIÓN", RptFont, Brushes.Black, New Point(CurrentX, 160))
+
+
+        'CurrentX = (ps.Width - e.Graphics.MeasureString("e imprimir sus estudios de laboratorio", RptFont).Width) / 2
+        'e.Graphics.DrawString("e imprimir sus estudios de laboratorio", RptFont, Brushes.Black, New Point(CurrentX, 170))
+        'CurrentX = (ps.Width - e.Graphics.MeasureString("en dim.com.ar", RptFont).Width) / 2
+        'e.Graphics.DrawString("en dim.com.ar", RptFont, Brushes.Black, New Point(CurrentX, 185))
 
         'Cuadros y marcos del ticket
         e.Graphics.DrawRectangle(Pens.Black, New Rectangle(New Point(25, 88), New Size(New Point(ps.Width - 50, 45))))
@@ -210,4 +231,12 @@ Public Class frmPrincipal
             Return "BUENAS NOCHES"
         End If
     End Function
+
+    Private Sub frmPrincipal_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
+        Dim img As Image = Image.FromFile(System.Configuration.ConfigurationManager.AppSettings("backgroundImagePath"))
+        Dim rect As New Rectangle(0, 0, Me.Width, Me.Height)
+        Me.BackgroundImageLayout = ImageLayout.Stretch
+        e.Graphics.DrawImage(img, rect)
+    End Sub
+
 End Class

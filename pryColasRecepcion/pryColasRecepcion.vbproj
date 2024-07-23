@@ -83,11 +83,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Conexion">
-      <HintPath>..\..\..\Libraries\Turnos.Business\bin\Conexion.dll</HintPath>
+      <HintPath>..\..\Generador\WorkinDirectory\Libraries\Conexion.dll</HintPath>
     </Reference>
     <Reference Include="FirebirdSql.Data.FirebirdClient, Version=5.8.1.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\FirebirdSql.Data.FirebirdClient-7.10.1-net452\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+      <HintPath>..\..\Generador\WorkinDirectory\Libraries\FirebirdSql.Data.FirebirdClient.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -103,21 +103,18 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Turnos.Business, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\Turnos.Business\bin\Turnos.Business.dll</HintPath>
+      <HintPath>..\..\Libraries\Turnos.Business\bin\Turnos.Business.dll</HintPath>
     </Reference>
     <Reference Include="Turnos.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\Turnos.Business\bin\Turnos.Data.dll</HintPath>
+      <HintPath>..\..\Libraries\Turnos.Business\bin\Turnos.Data.dll</HintPath>
     </Reference>
     <Reference Include="Turnos.Entities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\Turnos.Business\bin\Turnos.Entities.dll</HintPath>
+      <HintPath>..\..\Libraries\Turnos.Business\bin\Turnos.Entities.dll</HintPath>
     </Reference>
     <Reference Include="Turnos.GlobalFunctions">
-      <HintPath>..\..\..\Libraries\Turnos.Business\bin\Turnos.GlobalFunctions.dll</HintPath>
-    </Reference>
-    <Reference Include="USBManaged">
-      <HintPath>..\..\..\Libraries\Turnos.Business\bin\USBManaged.dll</HintPath>
+      <HintPath>..\..\Libraries\Turnos.Business\bin\Turnos.GlobalFunctions.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
